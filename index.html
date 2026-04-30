@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump & Slide - Party Rentals</title>
+    <meta name="description"
+        content="Find the best bounce houses and party rentals. Enter your event date & time to instantly see what’s available.">
+    <!-- Google Fonts: Inter for a clean, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+    <!-- Desktop Side Navigation -->
+    <div class="nav-overlay" id="desktopNavOverlay"></div>
+    <nav class="desktop-drawer" id="desktopDrawer">
+        <div class="drawer-header">
+            <div class="header-spacer"></div>
+            <img src="images/jump-slide-logo.png" alt="Jump & Slide Logo" class="drawer-logo">
+            <button class="close-drawer" id="closeDesktopDrawer">&times;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="#bounce-houses">Bounce Houses</a></li>
+            <li><a href="#water-slides">Water Slides</a></li>
+            <li><a href="#obstacle-courses">Obstacle Courses</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Top Dropdown Navigation -->
+    <div class="nav-overlay" id="mobileNavOverlay"></div>
+    <nav class="mobile-dropdown" id="mobileDropdown">
+        <div class="mobile-nav-header">
+            <div class="header-spacer"></div>
+            <img src="images/jump-slide-logo.png" alt="Jump & Slide Logo" class="mobile-nav-logo">
+            <button class="close-nav" id="closeMobileDropdown">&times;</button>
+        </div>
+        <div class="mobile-nav-body">
+            <ul class="mobile-nav-links">
+                <li><a href="#bounce-houses">Bounce Houses</a></li>
+                <li><a href="#water-slides">Water Slides</a></li>
+                <li><a href="#obstacle-courses">Obstacle Courses</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-nav-cta">
+                <a href="#categories" class="btn btn-mobile-nav-cta">Check Availability Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile-only MENU bar (top red strip) -->
+    <div class="mobile-menu-bar" id="mobileMenuBar" role="button" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span>MENU</span>
+    </div>
+
+    <!-- Top Utility Bar -->
+    <div class="top-utility-bar">
+        <div class="container top-utility-bar-content">
+            <div class="utility-left">
+                <span>Follow us:</span>
+                <div class="utility-social">
+                    <a href="#" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="utility-right">
+                <a href="#about">About Us</a>
+                <a href="#faq">FAQs</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container main-header-content">
+
+            <!-- LEFT: Hamburger + Logo -->
+            <div class="header-left">
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <a href="/" class="logo">
+                    <img src="images/jump-slide-logo.png" alt="Jump &amp; Slide Logo">
+                </a>
+            </div>
+
+            <!-- CENTER: Search -->
+            <div class="search-wrap">
+                <input type="text" class="search-input" placeholder="Search bounce houses, slides, and more...">
+                <button class="search-btn" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- RIGHT: Cart + Call + Hamburger -->
+            <div class="header-action-icons">
+                <a href="#" title="View Cart" class="header-cart-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
+                    </svg>
+                </a>
+                <a href="tel:6313217977" class="btn-call-now">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="call-icon">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.72-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    <span class="call-label">(631) 321-7977</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Full-Screen Nav -->
+    <div class="mobile-nav-drawer">
+        <button class="mobile-nav-close" aria-label="Close menu"
+            onclick="document.body.classList.remove('mobile-nav-open')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            CLOSE
+        </button>
+        <nav class="mobile-nav-links">
+            <a href="#home" onclick="document.body.classList.remove('mobile-nav-open')">HOME</a>
+            <a href="#bounce-houses" onclick="document.body.classList.remove('mobile-nav-open')">BOUNCE HOUSES</a>
+            <a href="#water-slides" onclick="document.body.classList.remove('mobile-nav-open')">WATER SLIDES</a>
+            <a href="#obstacle-courses" onclick="document.body.classList.remove('mobile-nav-open')">OBSTACLE COURSES</a>
+            <a href="#games" onclick="document.body.classList.remove('mobile-nav-open')">GAMES</a>
+            <a href="#contact" onclick="document.body.classList.remove('mobile-nav-open')">CONTACT</a>
+        </nav>
+    </div>
+
+    <!-- Desktop Navigation Bar -->
+    <div class="nav-bar">
+        <div class="container nav-bar-content">
+            <nav class="desktop-nav">
+                <a href="#home" class="active-nav">Home</a>
+                <a href="#bounce-houses">Bounce Houses</a>
+                <a href="#water-slides">Water Slides</a>
+                <a href="#obstacle-courses">Obstacle Courses</a>
+                <a href="#games">Games</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-container">
+            <img src="images/hero-image.jpg" alt="Party Setup" class="hero-image">
+            <div class="hero-gradient-overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text-area">
+                <div class="hero-text-inline">
+                    <h1 class="hero-headline">FIND WHAT YOU'RE LOOKING FOR FAST!</h1>
+                    <p class="hero-subheadline">Just enter your event date and time and see everything available</p>
+                </div>
+                <a href="#categories" class="btn btn-primary btn-large btn-hero-cta">ENTER DATE AND TIME</a>
+                <div class="hero-trust">
+                    <div class="hero-trust-row">
+                        <div class="hero-trust-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="currentColor" stroke="none">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                </polygon>
+                            </svg>
+                            <span>200+ 5-Star Reviews</span>
+                        </div>
+                    </div>
+                    <div class="hero-trust-row">
+                        <div class="hero-trust-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <path d="M9 12l2 2 4-4"></path>
+                            </svg>
+                            <span>Licensed &amp; Insured</span>
+                        </div>
+                        <span class="trust-divider">&bull;</span>
+                        <div class="hero-trust-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>Serving Long Island Since 2005</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-empty-area">
+                <!-- Empty space on right to show the image -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Section -->
+    <section class="categories section-padding" id="categories">
+        <div class="container">
+            <h2 class="section-title">Check Out All Of Our Amazing Event Rentals</h2>
+
+            <!-- Top Promo Banners -->
+            <div class="promo-grid top-promo">
+                <a href="#mechanical-rides" class="promo-banner">
+                    <img src="images/js-mechanical-rides.png" alt="Mechanical Rides Promotional Banner">
+                </a>
+                <a href="#tents-tables" class="promo-banner">
+                    <img src="images/js-tents-tables.png" alt="Tents and Tables Promotional Banner">
+                </a>
+            </div>
+
+            <div class="category-grid">
+                <a href="#bouncers-slides" class="category-card cat-bouncers-slides"
+                    aria-label="Bouncers and Slides"></a>
+                <a href="#water-slides" class="category-card cat-water-slides" aria-label="Water and Slides"></a>
+                <a href="#obstacle-courses" class="category-card cat-obstacle-courses"
+                    aria-label="Obstacle Courses"></a>
+                <a href="#inflatable-games" class="category-card cat-inflatable-games"
+                    aria-label="Inflatable Games"></a>
+                <a href="#carnival-attractions" class="category-card cat-carnival-attractions"
+                    aria-label="Carnival and Attractions"></a>
+                <a href="#bounce-houses" class="category-card cat-bounce-houses" aria-label="Bounce Houses"></a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 1: Credibility (Trust) -->
+    <section class="trust-logos section-padding">
+        <div class="container text-center">
+            <h2 class="section-title">Trusted By Families & Events Across The Area</h2>
+            <p class="section-subtitle">We’ve helped create unforgettable events for schools, churches, companies, and
+                local families.</p>
+            <div class="logo-row">
+                <div class="logo-item">School Districts</div>
+                <div class="logo-item">City Parks</div>
+                <div class="logo-item">Youth Sports</div>
+                <div class="logo-item">Corporate Events</div>
+                <div class="logo-item">Religious Groups</div>
+                <div class="logo-item">Block Parties</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alternating Content Sections -->
+    <section class="alternating-content">
+        <!-- Row 1: Trust Builder -->
+        <div class="content-row section-padding">
+            <div class="container zig-zag-flex">
+                <div class="zig-zag-image">
+                    <img src="images/happy-kids.png" alt="Happy kids jumping at a party">
+                </div>
+                <div class="zig-zag-text">
+                    <h2 class="section-title text-left">Your Best Event Ever Starts Here</h2>
+                    <p class="mb-4">We don't just deliver inflatables; we deliver the centerpiece of your child's
+                        favorite memories.</p>
+                    <ul class="benefit-bullets">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Thousands of unforgettable birthday memories created</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Vibrant, high-energy setups that wow every guest</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Stress-free entertainment that keeps kids happy</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: Problem -> Solution -->
+        <div class="content-row section-padding bg-light">
+            <div class="container zig-zag-flex">
+                <div class="zig-zag-text">
+                    <h2 class="section-title text-left">Stop Worrying About Logistics</h2>
+                    <p class="mb-4">We handle the heavy lifting and the safety checks so you can actually enjoy the
+                        party.</p>
+                    <ul class="benefit-bullets">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Strict "Clean & Safe" sanitization before every use</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Professional setup with certified safety-first anchors</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Reliable on-time delivery—we're there before guests</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="zig-zag-image">
+                    <img src="images/clean-safety.png" alt="Professional safety inspection">
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3: Authority -->
+        <div class="content-row section-padding">
+            <div class="container zig-zag-flex">
+                <div class="zig-zag-image zig-zag-relative">
+                    <img src="images/authority-fleet.png" alt="Professional event setup team at a park">
+                    <div class="experience-badge">Serving Families Since 2003</div>
+                </div>
+                <div class="zig-zag-text">
+                    <h2 class="section-title text-left">Decades of Proven Reliability</h2>
+                    <p class="mb-4">With over 20 years of experience, we've mastered the art of the perfect event
+                        delivery.</p>
+                    <ul class="benefit-bullets">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Trusted by schools, churches, and corporate events</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Fully licensed and insured for your peace of mind</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Expert team that knows exactly how to maximize space</span>
+                        </li>
+                    </ul>
+                    <p class="credibility-accent">Trusted by hundreds of local families every year.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- How It Works Section -->
+    <section class="how-it-works section-padding">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Choose Your Dates</h3>
+                    <p>Enter your party date and time to see real-time availability.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Pick Your Fun</h3>
+                    <p>Select the perfect inflatables and party extras for your event.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>We Deliver</h3>
+                    <p>We handle the setup and teardown so you can enjoy the party!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase Section -->
+    <section class="video-showcase section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">See The Fun In Action</h2>
+                <p class="section-subtitle">Watch real events and experiences</p>
+            </div>
+            <div class="video-grid">
+                <a href="https://youtu.be/L0YsJ__ryPQ" target="_blank" class="video-item"
+                    style="background-image: url('https://img.youtube.com/vi/L0YsJ__ryPQ/hqdefault.jpg');">
+                    <div class="video-overlay">
+                        <div class="play-button">
+                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://youtu.be/nwY2Ps72c_w" target="_blank" class="video-item"
+                    style="background-image: url('https://img.youtube.com/vi/nwY2Ps72c_w/hqdefault.jpg');">
+                    <div class="video-overlay">
+                        <div class="play-button">
+                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://youtu.be/yvM9TOrD3Bc" target="_blank" class="video-item"
+                    style="background-image: url('https://img.youtube.com/vi/yvM9TOrD3Bc/hqdefault.jpg');">
+                    <div class="video-overlay">
+                        <div class="play-button">
+                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://youtu.be/XSIfGVT_yz4" target="_blank" class="video-item"
+                    style="background-image: url('https://img.youtube.com/vi/XSIfGVT_yz4/hqdefault.jpg');">
+                    <div class="video-overlay">
+                        <div class="play-button">
+                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="video-cta text-center mt-5">
+                <h3 class="mb-4">Ready to Book Your Event?</h3>
+                <a href="#categories" class="btn btn-primary btn-large btn-hero-cta">Enter Date and Time</a>
+                <p class="cta-urgency-text">Book online today to secure your rentals before they're gone.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer section-padding bg-dark">
+        <div class="container footer-content">
+            <!-- Column 1: Brand -->
+            <div class="footer-col brand-col">
+                <img src="images/jump-slide-logo.png" alt="Jump & Slide Logo" class="footer-logo">
+                <p>Making parties unforgettable with safe, clean, and fun rentals.</p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <details class="footer-accordion" open>
+                    <summary>
+                        <h4>Quick Links</h4>
+                    </summary>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#categories">Rentals</a>
+                        <a href="#about">About Us</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#faq">FAQ</a>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Column 3: Resources -->
+            <div class="footer-col">
+                <details class="footer-accordion" open>
+                    <summary>
+                        <h4>Resources</h4>
+                    </summary>
+                    <div class="footer-links">
+                        <a href="#reviews">Reviews</a>
+                        <a href="#videos">Videos</a>
+                        <a href="#blog">Blog</a>
+                        <a href="#tips">Rental Tips</a>
+                        <a href="#troubleshooting">Troubleshooting</a>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Column 4: Company / Legal -->
+            <div class="footer-col">
+                <details class="footer-accordion" open>
+                    <summary>
+                        <h4>Company / Legal</h4>
+                    </summary>
+                    <div class="footer-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms & Conditions</a>
+                        <a href="#donations">Donations</a>
+                        <a href="#careers">Join Our Team / Help Wanted</a>
+                        <a href="#coupons">Coupons & Specials</a>
+                    </div>
+                </details>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p class="copyright-text">&copy; 2026 Jump & Slide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta">
+        <a href="#check-availability" class="btn btn-primary btn-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                style="vertical-align: middle; margin-right: 6px;">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>Check Availability
+        </a>
+    </div>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenuBar = document.getElementById('mobileMenuBar');
+        const closeDesktopDrawer = document.getElementById('closeDesktopDrawer');
+        const closeMobileDropdown = document.getElementById('closeMobileDropdown');
+        const desktopDrawer = document.getElementById('desktopDrawer');
+        const mobileDropdown = document.getElementById('mobileDropdown');
+        const desktopNavOverlay = document.getElementById('desktopNavOverlay');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+
+        function toggleDesktopNav() {
+            desktopDrawer.classList.toggle('open');
+            desktopNavOverlay.classList.toggle('open');
+            document.body.style.overflow = desktopDrawer.classList.contains('open') ? 'hidden' : '';
+        }
+
+        function toggleMobileNav() {
+            mobileDropdown.classList.toggle('open');
+            mobileNavOverlay.classList.toggle('open');
+            document.body.style.overflow = mobileDropdown.classList.contains('open') ? 'hidden' : '';
+        }
+
+        hamburgerBtn.addEventListener('click', toggleDesktopNav);
+        closeDesktopDrawer.addEventListener('click', toggleDesktopNav);
+        desktopNavOverlay.addEventListener('click', toggleDesktopNav);
+
+        mobileMenuBar.addEventListener('click', toggleMobileNav);
+        closeMobileDropdown.addEventListener('click', toggleMobileNav);
+        mobileNavOverlay.addEventListener('click', toggleMobileNav);
+
+        // Close menus when clicking a link
+        document.querySelectorAll('.drawer-links a, .mobile-nav-links a, .btn-mobile-nav-cta').forEach(link => {
+            link.addEventListener('click', () => {
+                desktopDrawer.classList.remove('open');
+                mobileDropdown.classList.remove('open');
+                desktopNavOverlay.classList.remove('open');
+                mobileNavOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+
+</html>
